@@ -33,6 +33,7 @@ class PrintEditionItem {
     }
 
     fix(){
+        debugger;
         this.state = this.state * 1.5;
         return this.state;
     }
@@ -43,14 +44,18 @@ class PrintEditionItem {
         if ( state < 0){
             this._state = 0;
         } else if (state > 100) {
+            console.log(state);
             this._state = 100;
-        } this._state = state;
+        } else if ( state < 100 ) {
+            console.log(state);
+            this._state = state;
+           
+        }
     }
 
     get state(){
         return this._state;
     }
-
 }
 
 const sherlock = new PrintEditionItem("Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе", 2019, 1008);
